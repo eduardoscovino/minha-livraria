@@ -1,0 +1,18 @@
+A livraria vai conter um modelo de livro
+São dois usuários: comprador e fornecedor
+Recursos:
+- Comprador:
+  consultar se há livro disponível
+  consultar preço e avaliação
+  comprar livro (ao comprar, apaga o livro do repo)
+- Fornecedor:
+  consultar se já existe o livro no repo
+  adicionar o livro
+  alterar o preço em caso de promoção
+
+Os livros terão:
+.id
+.título
+.autor
+.avaliação
+.preço (único accessor)
