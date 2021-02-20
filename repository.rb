@@ -9,6 +9,12 @@ class Repository
     load_csv
   end
 
+  def all
+    @livros
+  end
+
+  
+
   private
 
   def load_csv
