@@ -13,7 +13,13 @@ class Repository
     @livros
   end
 
-  
+  def add_livro(livro)
+    @livros << livro
+  end
+
+  def aumentar_contador(index_livro, numero_livro)
+    @livros[index_livro].contador += numero_livro
+  end
 
   private
 
