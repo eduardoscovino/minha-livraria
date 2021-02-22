@@ -8,6 +8,7 @@ Recursos:
 - Fornecedor:
   consultar se já existe o livro no repo
   adicionar o livro
+  caso o livro já exista, aumenta o contador (o contador é a quantidade de exemplares disponíveis)
   alterar o preço em caso de promoção
 
 Os livros terão:

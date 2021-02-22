@@ -19,7 +19,7 @@ class Repository
 
   def load_csv
     CSV.foreach(@csv_file) do |row|
-      @livros << Livro.new(row[0], row[1], row[2], row[3], row[4])
+      @livros << Livro.new(row[0], row[1], row[2], row[3], row[4], row[5])
     end
   end
 
@@ -27,7 +27,7 @@ class Repository
   def save_to_csv
     CSV.open(@csv_file, 'wb') do |csv|
       @livros.each do |livro|
-        csv << [livro.id, livro.titulo, livro.autor, livro.avaliacao, livro.preco]
+        csv << [livro.id, livro.titulo, livro.autor, livro.avaliacao, livro.preco, livro.contador]
       end
     end
   end
