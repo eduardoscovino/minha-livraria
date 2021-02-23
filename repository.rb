@@ -20,6 +20,20 @@ class Repository
   def aumentar_contador(index_livro, numero_livro)
     @livros[index_livro].contador += numero_livro
   end
+  
+  def remove_recipe(index)
+    @recipes.delete_at(index)
+    save_to_csv
+  end
+
+  def comprar_livro(index_livro, numero_livro)
+    subtracao = @livros[index_livro].contador - numero_livro
+    if subtracao.zero?
+      remove_recipe(index_livro)
+    else
+      @livros[index_livro].contador -= numero_livro
+    end
+  end
 
   private
 

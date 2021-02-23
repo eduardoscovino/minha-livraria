@@ -37,7 +37,17 @@ class Controller
     # exibir mensagem do livro com o novo volume
     @view.exibe_mensagem_add_exemplares
   end
-  
+
+  def comprar
+    # perguntar qual livro deseja comprar
+    livros = repository.all
+    opcao = @view.pergunta_qual_livro_quer_comprar(livros)
+    # quantos livros quer comprar
+    qtde_livros = @view.pergunta_quantos_quer_comprar
+    # modificar estoque
+    @repository.comprar_livro(opcao, qtde_livros)
+    # exibir mensagem de compra
+    @view.exibe_mensagem_compra
   private
 
   def display_livros
