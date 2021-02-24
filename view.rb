@@ -44,5 +44,16 @@ class View
   def exibe_mensagem_compra
     puts "Compra adicionada no carrinho!"
   end
+
+  def exibe_mensagem_fornecedor
+    puts "Caro fornecedor, o estoque contém os livros:"
+  end
+
+  def pede_escolha_fornecedor
+    puts "Escolha uma das opções (Digite o index)"
+    puts "1 - Adicionar um novo livro"
+    puts "2 - Adicionar livro já existente"
+    gets.chomp.to_i
+  end
   
 end

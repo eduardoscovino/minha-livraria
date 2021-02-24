@@ -11,10 +11,8 @@ Recursos:
   adicionar o livro - ok 
   caso o livro já exista, aumenta o contador (o contador é a quantidade de exemplares disponíveis) - ok 
   alterar o preço em caso de promoção
-  gerar id do livro adicionado
 
 Os livros terão:
-.id
 .título
 .autor
 .avaliação
