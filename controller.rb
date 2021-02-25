@@ -1,5 +1,6 @@
 require_relative 'repository'
 require_relative 'livro'
+require_relative 'view'
 
 class Controller
   def initialize(repository)
@@ -20,7 +21,7 @@ class Controller
 
   def comprar
     # perguntar qual livro deseja comprar
-    livros = repository.all
+    livros = @repository.all
     opcao = @view.pergunta_qual_livro_quer_comprar(livros)
     # quantos livros quer comprar
     qtde_livros = @view.pergunta_quantos_quer_comprar
@@ -33,7 +34,7 @@ class Controller
   private
 
   def display_livros
-    livros = repository.all
+    livros = @repository.all
     @view.display(livros)
   end
 
