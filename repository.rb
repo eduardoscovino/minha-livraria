@@ -24,15 +24,15 @@ class Repository
   end
   
   def remove_livro(index)
-    @recipes.delete_at(index)
+    @livros.delete_at(index)
   end
   
   def comprar_livro(index_livro, numero_livro)
-    subtracao = @livros[index_livro].contador - numero_livro
+    subtracao = @livros[index_livro].contador.to_i - numero_livro.to_i
     if subtracao.zero?
       remove_livro(index_livro)
     else
-      @livros[index_livro].contador -= numero_livro
+      @livros[index_livro].contador = @livros[index_livro].contador.to_i - numero_livro.to_i
     end
     save_to_csv
   end
