@@ -15,31 +15,33 @@ class Repository
 
   def add_livro(livro)
     @livros << livro
-  end
-
-  def aumentar_contador(index_livro, numero_livro)
-    @livros[index_livro].contador += numero_livro
-  end
-  
-  def remove_recipe(index)
-    @recipes.delete_at(index)
     save_to_csv
   end
 
+  def aumentar_contador(index_livro, numero_livro)
+    @livros[index_livro].contador = @livros[index_livro].contador.to_i + numero_livro.to_i
+    save_to_csv
+  end
+  
+  def remove_livro(index)
+    @recipes.delete_at(index)
+  end
+  
   def comprar_livro(index_livro, numero_livro)
     subtracao = @livros[index_livro].contador - numero_livro
     if subtracao.zero?
-      remove_recipe(index_livro)
+      remove_livro(index_livro)
     else
       @livros[index_livro].contador -= numero_livro
     end
+    save_to_csv
   end
 
   private
 
   def load_csv
     CSV.foreach(@csv_file) do |row|
-      @livros << Livro.new(row[0], row[1], row[2], row[3], row[4], row[5])
+      @livros << Livro.new(row[0], row[1], row[2], row[3], row[4])
     end
   end
 
@@ -47,7 +49,7 @@ class Repository
   def save_to_csv
     CSV.open(@csv_file, 'wb') do |csv|
       @livros.each do |livro|
-        csv << [livro.id, livro.titulo, livro.autor, livro.avaliacao, livro.preco, livro.contador]
+        csv << [livro.titulo, livro.autor, livro.avaliacao, livro.preco, livro.contador]
       end
     end
   end

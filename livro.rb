@@ -1,6 +1,6 @@
 class Livro
-  attr_reader :id, :titulo, :autor, :avaliacao
-  attr_accessor :preco, :contador
+  attr_reader :titulo, :autor, :avaliacao, :preco
+  attr_accessor :contador
   def initialize(titulo, autor, avaliacao, preco, contador = 1)
     @titulo =     titulo
     @autor =      autor

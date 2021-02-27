@@ -1,8 +1,8 @@
 class View
 
   def display(livros)
-    livros.each_with_index do |index, livro|
-      puts "#{index + 1} - #{livro.titulo} / Autor: #{livro.autor} / Rating: #{livro.avaliacao} / Preço: #{livro.preco} / Qtde: #{preco.contador}"
+    livros.each_with_index do |livro, index|
+      puts "#{index + 1} - #{livro.titulo} / Autor: #{livro.autor} / Rating: #{livro.avaliacao} / Preço: #{livro.preco} / Qtde: #{livro.contador}"
     end
   end
 
@@ -13,11 +13,11 @@ class View
 
   def display_livro_adicionado(livro_adicionado)
     puts "Novo livro adicionado"
-    puts "#{livro.titulo} / Autor: #{livro.autor} / Rating: #{livro.avaliacao} / Preço: #{livro.preco} / Qtde em estoque: #{preco.contador}"
+    puts "#{livro_adicionado.titulo} / Autor: #{livro_adicionado.autor} / Rating: #{livro_adicionado.avaliacao} / Preço: #{livro_adicionado.preco} / Qtde em estoque: #{livro_adicionado.contador}"
   end
 
   def estocar_livro_existente
-    puts "Selecione o livro que deseja adicionar exemplares"
+    puts "Selecione o livro que deseja adicionar exemplares (Digite o índice)"
     gets.chomp.to_i - 1
   end
 

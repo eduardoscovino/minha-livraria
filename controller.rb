@@ -55,7 +55,7 @@ class Controller
     # colocar no repositorio
     @repository.add_livro(novo_livro)
     # exibir mensagem de sucesso para o usuário
-    display_livro_adicionado
+    @view.display_livro_adicionado(novo_livro)
   end
   
   def estocar

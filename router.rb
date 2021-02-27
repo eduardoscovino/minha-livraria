@@ -11,6 +11,7 @@ class Router
     while @running
       display_mensagem_usuario
       usuario = gets.chomp.to_i
+      print `clear`
       acoes(usuario)
     end
   end
