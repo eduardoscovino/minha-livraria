@@ -46,8 +46,8 @@ class Controller
   end
 
   def create
-    titulo = @view.perguntar_por_infos("Título do livro")
-    autor = @view.perguntar_por_infos("Autor")
+    titulo = @view.perguntar_por_infos("Título do livro (sem caracteres especiais)")
+    autor = @view.perguntar_por_infos("Autor (sem caracteres especiais)")
     avaliacao = @view.perguntar_por_infos("Nota")
     preco = @view.perguntar_por_infos("Preço")
     # criar nova instancia
