@@ -5,7 +5,9 @@ class Router
   end
 
   def run
+    puts "*******************************"
     puts "**** Bem-vindo à livraria! ****"
+    puts "*******************************"
     puts ""
 
     while @running

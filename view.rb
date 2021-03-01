@@ -17,40 +17,45 @@ class View
   end
 
   def estocar_livro_existente
-    puts "Selecione o livro que deseja adicionar exemplares (Digite o índice)"
+    puts "\n\nSelecione o livro que deseja adicionar exemplares (Digite o índice)"
     gets.chomp.to_i - 1
   end
 
   def quantos_livros_a_estocar
-    puts "Quantos livros deseja estocar?"
+    puts "\n\nQuantos livros deseja estocar?"
     gets.chomp.to_i
   end
 
   def exibe_mensagem_add_exemplares
-    puts "Volume de exemplares adicionado com sucesso"
+    puts "\n\nVolume de exemplares adicionado com sucesso!"
   end
 
   def pergunta_qual_livro_quer_comprar(livros)
-    puts "Qual livro deseja comprar? (Digite o index)"
+    puts "\n\nQual livro deseja comprar? (Digite o index)"
     display(livros)
     gets.chomp.to_i - 1
   end
 
   def pergunta_quantos_quer_comprar
-    puts "Quantos exemplares deseja comprar?"
+    puts "\n\nQuantos exemplares deseja comprar?"
     gets.chomp.to_i
   end
 
+  def quantidade_invalida
+    puts "Quantidade inválida de exemplares :("
+    puts "Por favor, digite novamente\n\n"
+  end
+
   def exibe_mensagem_compra
-    puts "Compra adicionada no carrinho!"
+    puts "\n\nCompra adicionada no carrinho!"
   end
 
   def exibe_mensagem_fornecedor
-    puts "Caro fornecedor, o estoque contém os livros:"
+    puts "\n\nCaro fornecedor, o estoque contém os livros:"
   end
 
   def pede_escolha_fornecedor
-    puts "Escolha uma das opções (Digite o index)"
+    puts "\n\nEscolha uma das opções (Digite o index)"
     puts "1 - Adicionar um novo livro"
     puts "2 - Adicionar livro já existente"
     gets.chomp.to_i

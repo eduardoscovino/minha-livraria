@@ -25,7 +25,13 @@ class Controller
     opcao = @view.pergunta_qual_livro_quer_comprar(livros)
     # quantos livros quer comprar
     qtde_livros = @view.pergunta_quantos_quer_comprar
-    # modificar estoque
+    comparador = qtde_livros > @repository.livros[opcao].contador.to_i
+    p @repository.livros[opcao].contador.to_i
+    while comparador
+      @view.quantidade_invalida
+      qtde_livros = @view.pergunta_quantos_quer_comprar
+    end
+    # modificar estoque    
     @repository.comprar_livro(opcao, qtde_livros)
     # exibir mensagem de compra
     @view.exibe_mensagem_compra

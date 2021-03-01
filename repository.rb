@@ -2,6 +2,8 @@ require 'csv'
 require_relative 'livro'
 
 class Repository
+  attr_reader :livros
+  
   def initialize(csv_file)
     # livros eh um array de instancias da classe livro
     @livros = []
